@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrossel Tecnológico</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="carousel">
+            <div class="slides">
+                <div class="slide">
+                    <a href="https://www.hospitalviladaserra.com.br/"target="_blank">
+                    <img src="viladaserrap.png" alt="Imagem 1">
+                </a>
+                </div>
+                <div class="slide">
+                    <a href="https://btcempreendimentos.com.br/"target="_blank">
+                    <img src="btcp.png" alt="Imagem 2">
+                </a>
+                </div>
+                <div class="slide">
+                    <a href="https://www.grupoadservi.com.br/"target="_blank">
+                    <img src="adsv2.png" alt="Imagem 3">
+                </a>
+                </div>
+                <div class="slide">
+                    <a href="https://www.materdei.com.br/meu-materdei"target="_blank">
+                    <img src="matd.png" alt="Imagem 4">
+                </a>
+                </div>
+            </div>
+        </div>
+        <div class="instagram">
+            <h2>Para mais informações</h2>
+            <a href="https://www.instagram.com/optimusbrasil" target="_blank">@OPTIMUS BRASIL</a>
+        </div>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showNextSlide() {
+            slides[currentIndex].classList.remove('visible');
+            currentIndex = (currentIndex + 1) % totalSlides;
+            slides[currentIndex].classList.add('visible');
+            document.querySelector('.slides').style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        setInterval(showNextSlide, 5000);
+    </script>
+</body>
+</html>
+
